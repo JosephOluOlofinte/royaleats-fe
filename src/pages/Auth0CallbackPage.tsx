@@ -1,26 +1,26 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { useCreateUser } from '../api/UserApi';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCreateAuth0User } from '../api/AuthApi';
 
-const AuthCallbackPage = () => {
+const Auth0CallbackPage = () => {
   const navigate = useNavigate();
   const { user } = useAuth0();
-  const { createUser } = useCreateUser();
+  const { createAuth0user } = useCreateAuth0User();
 
   const hasCreatedUser = useRef(false);
   useEffect(() => {
     if (user?.sub && user?.email && !hasCreatedUser.current) {
-      createUser({
+      createAuth0user({
         auth0Id: user.sub,
         email: user.email,
       });
       hasCreatedUser.current = true;
     }
     navigate('/');
-  }, [createUser, navigate, user])
+  }, [createAuth0user, navigate, user]);
 
   return <>Loading...</>
 };
 
-export default AuthCallbackPage;
+export default Auth0CallbackPage;
