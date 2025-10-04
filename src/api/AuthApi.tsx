@@ -45,8 +45,6 @@ export const useSignUp = () => {
     }
 }
 
-
-
 // communiacte with auth0 create user endpoint
 type CreateAuth0UserRequest = {
     auth0Id: string;
@@ -62,7 +60,7 @@ export const useCreateAuth0User = () => {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${accessToken}`,
-                'Content-Type': 'application/josn',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(user),
         });

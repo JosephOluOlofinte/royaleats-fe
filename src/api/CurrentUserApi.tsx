@@ -21,7 +21,7 @@ export const useUpdateCurrentUser = () => {
     formData: UpdateCurrentuserRequestTypes
   ) => {
     const accessToken = await getAccessTokenSilently();
-    const response = await fetch(`${API_BASE_URL}/me`, {
+    const response = await fetch(`${API_BASE_URL}/current-user`, {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${accessToken}`,
