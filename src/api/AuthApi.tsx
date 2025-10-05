@@ -56,7 +56,7 @@ export const useCreateAuth0User = () => {
 
     const createAuth0UserRequest = async (user: CreateAuth0UserRequest) => {
         const accessToken = await getAccessTokenSilently();
-        const response = await fetch(`${API_BASE_URL}/auth/sign-up/auth0`, {
+        const response = await fetch(`${API_BASE_URL}/auth/auth0`, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${accessToken}`,
