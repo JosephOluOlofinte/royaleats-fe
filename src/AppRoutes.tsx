@@ -3,6 +3,7 @@ import Layout from './layouts/Layout';
 import HomePage from './pages/HomePage';
 import Auth0CallbackPage from './pages/Auth0CallbackPage';
 import UserProfilePage from './pages/UserProfilePage';
+import SignUp from './auth/SignUp';
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,14 @@ const AppRoutes = () => {
         }
       />
       <Route path='/auth-callback' element={<Auth0CallbackPage />} />
+      <Route
+        path='/auth/sign-up'
+        element={
+          <Layout>
+            <SignUp />
+          </Layout>
+        }
+      />
       <Route
         path='/user-profile'
         element={
