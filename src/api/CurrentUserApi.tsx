@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
-// logic to commmunicate with updateCurrentUser endpoint
+// commmunicate with updateCurrentUser endpoint
 type UpdateCurrentuserRequestTypes = {
   name: string;
   address: string;
@@ -60,3 +60,11 @@ export const useUpdateCurrentUser = () => {
     isPending,
   };
 };
+
+
+// communicate with getCurrentUser endpoint
+// type GetCurrentUserRequestTypes = {
+//   name: string;
+// }
+
+export const useGetCurrentUser = () => {}
