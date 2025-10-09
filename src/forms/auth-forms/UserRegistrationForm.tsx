@@ -13,6 +13,7 @@ import {
 import { Input } from '../../components/ui/input';
 import LoadingButton from '../../components/ui/loading-button';
 import { Button } from '../../components/ui/button';
+import { NavLink } from 'react-router-dom';
 
 const registerSchema = z
   .object({
@@ -117,6 +118,9 @@ const UserRegistrationForm = ({ onSubmit, isLoading }: Props) => {
             Open my account
           </Button>
         )}
+        <div>
+          <p>Already have an account? <NavLink to='/auth/sign-in' className='text-blue-800 font-semibold'>Sign in</NavLink></p>
+        </div>
       </form>
     </Form>
   );

@@ -40,16 +40,15 @@ export const useUpdateCurrentUser = () => {
   const {
     mutateAsync: updateCurrentUser,
     isPending,
-    isError,
     isSuccess,
     error,
     reset,
   } = useMutation({ mutationFn: updateCurrentUserRequest });
 
+
   return {
     updateCurrentUser,
     isPending,
-    isError,
     isSuccess,
     error,
     reset,
