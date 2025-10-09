@@ -11,7 +11,7 @@ const HomePage = () => {
           <div className="grid md:grid-cols-2 gap-5">
               <img src={appImg} alt="" />
               <div className='flex flex-col justify-center items-center gap-4 text-center'>
-                  <span className='font-bold text-3xl tracking-tighter'>Order takewawy even faster! </span>
+                  <span className='font-bold text-3xl tracking-tighter'>Order takeaway even faster! </span>
                   <span>Download RoyalEats App for faster ordering and personalized recommendations</span>
                   <img src={appDown} alt="" />
               </div>

@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-toastify";
 
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -45,12 +46,17 @@ export const useUpdateCurrentUser = () => {
     reset,
   } = useMutation({ mutationFn: updateCurrentUserRequest });
 
+  if (isSuccess) {
+    toast.success('User profile updated')
+  }
+
+  if (error) {
+    toast.error(error.toString());
+    reset();
+  }
 
   return {
     updateCurrentUser,
     isPending,
-    isSuccess,
-    error,
-    reset,
   };
 };
